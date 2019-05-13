@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Details</title>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet name="style.css"  />
+        <div id="header"></div>
+        <div id="menu">
+            <ul>
+                <li><h:link value="Admin" outcome="admin" /></li>
+                <li><h:link value="Home" outcome="index" /></li>
+            </ul>
+        </div>
+        <div id="content">
+            <div>
+                <h1><h:outputText value="#{opleidingController.opleiding.opl_titel}"/> 
+                    (<h:outputText value="#{opleidingController.opleiding.opl_code}"/>)</h1>
+            </div>
+
+            <div>
+                <p>
+                    <h:outputText value="#{opleidingController.opleiding.opl_thema}"/>
+                    <br/>
+                    <h:outputText value="#{opleidingController.opleiding.opl_duur}"/> dagen
+                    <br/>
+                    maximum <h:outputText value="#{opleidingController.opleiding.opl_max}"/> deelnemers
+                </p>
+            </div>
+        </div>
+    </h:body>
+</html>
+

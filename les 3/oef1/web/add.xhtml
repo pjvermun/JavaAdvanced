@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Add</title>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet name="style.css"  />
+        <div id="header"></div>
+        <div id="menu">
+            <ul>
+                <li><h:link value="Admin" outcome="admin" /></li>
+                <li><h:link value="Home" outcome="index" /></li>
+            </ul>
+        </div>
+        <div id="content">
+            <div>
+                <f:view><h:form>
+                        <h1><h:outputText value="Create/Edit"/></h1>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Code" for="opl_code" />
+                            <h:inputText id="opl_code" value="#{opleidingController.opleiding.opl_code}" title="Opl_code" />
+                            <h:outputLabel value="Titel" for="opl_titel" />
+                            <h:inputTextarea  id="opl_titel" value="#{opleidingController.opleiding.opl_titel}" title="Opl_titel" />
+                            <h:outputLabel value="Thema" for="opl_thema" />
+                            <h:inputText id="opl_thema" value="#{opleidingController.opleiding.opl_thema}" title="Opl_thema" />
+                            <h:outputLabel value="Duur" for="opl_duur" />
+                            <h:inputText id="opl_duur" value="#{opleidingController.opleiding.opl_duur}" title="Opl_duur" />
+                            <h:outputLabel value="Maximum aantal deelnemers" for="opl_max" />
+                            <h:inputText id="opl_max" value="#{opleidingController.opleiding.opl_max}" title="Opl_max" />
+                        </h:panelGrid>
+                        <h:commandButton value="Bewaar" action="#{opleidingController.add2()}"></h:commandButton>
+                    </h:form>
+                </f:view>
+
+            </div>
+        </div>
+    </h:body>
+</html>
+

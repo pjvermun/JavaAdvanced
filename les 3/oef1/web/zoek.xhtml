@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Zoek</title>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet name="style.css"  />
+        <div id="header"></div>
+        <div id="menu">
+            <ul>
+                <li><h:link value="Admin" outcome="admin" /></li>
+                <li><h:link value="Home" outcome="index" /></li>
+            </ul>
+        </div>
+        <div id="content">
+            <div>
+                <h:form>
+                    <h:outputLabel for="titelZoek" value="(Deel van) titel:"/>
+                    <h:inputText id="titelZoek" binding ="#{titelZoek}" /> 
+                    <h:commandButton value="Zoek op titel" action="#{opleidingController.zoekTitel(titelZoek.value)}" />
+                    <br/><br/>
+                    <h:outputLabel for="themaZoek" value="Kies je thema:"/>
+                    <h:selectOneMenu id="themaZoek" value="#{themaZoek}">
+   			<f:selectItems value="#{opleidingController.getThemas()}"/>
+   		</h:selectOneMenu> 
+                    <h:commandButton value="Zoek op thema" action="#{opleidingController.zoekThema(themaZoek)}" />
+                </h:form>
+                
+            </div>
+        </div>
+    </h:body>
+</html>
+

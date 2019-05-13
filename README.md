@@ -1,1 +1,3 @@
 # Oefeningen Java Advanced
+* geen garantie op correctheid
+* ...

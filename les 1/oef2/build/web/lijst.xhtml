@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" href="css/style.css"></link>
+        <title>Overzicht reizigers</title>
+    </h:head>
+    <h:body>
+        <div id="head">
+            <h1>Ga ook mee naar de sneeuw. reserveer nu een plaatsje in de bus!</h1>
+        </div>
+        
+        <div id="content">
+            <ol>
+            <ui:repeat var="r" value="#{bus.reizigers}">
+                <li>#{r.naam} (geboortedatum: 
+                    <h:outputText value="#{r.geboorteDatum}">
+                        <f:convertDateTime pattern="dd MMMM yyyy"/>
+                    </h:outputText>)</li>
+            </ui:repeat>
+            </ol>
+            <h:link value="Terug naar inschrijfpagina" outcome="index"/>
+        </div>
+    </h:body>
+</html>
+

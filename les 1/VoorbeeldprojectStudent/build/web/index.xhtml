@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="nl"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Student Registration Form</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputLabel value="Naam:" for="naam"/>
+            <h:inputText id="naam" value="#{student.naam}" />		
+            <br/><br/>
+            <h:outputLabel value="Land:" for="land"/>			
+            <h:selectOneMenu id="land" value="#{student.land}">
+                <f:selectItem itemValue="Frankrijk" itemLabel="Frankrijk" />
+                <f:selectItem itemValue="Duitsland" itemLabel="Duitsland" />
+                <f:selectItem itemValue="India" itemLabel="India" />
+                <f:selectItem itemValue="Turkije" itemLabel="Turkije" />
+                <f:selectItem itemValue="United Kingdom" itemLabel="United Kingdom" />
+            </h:selectOneMenu>		 
+            <br/><br/>
+            <h:outputLabel value="Favoriete programmeertaal" for="taal"/>			
+            <h:selectOneRadio id="taal" value="#{student.favorieteTaal}">
+                <f:selectItem itemValue="Java" itemLabel="Java" />
+                <f:selectItem itemValue="C#" itemLabel="C#" />
+                <f:selectItem itemValue="PHP" itemLabel="PHP" />
+                <f:selectItem itemValue="Python" itemLabel="Python" />
+            </h:selectOneRadio>	
+            <br/><br/>
+            <h:commandButton value="Submit" action="bevestigingStudent" />
+        </h:form>
+    </h:body>
+</html>
+
+
+
+
+
+
+
+
+

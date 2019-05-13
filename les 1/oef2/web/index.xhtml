@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Skibus inschrijvingen</title>
+        <link rel="stylesheet" href="css/style.css"></link>
+    </h:head>
+    <h:body>
+        <div id="head">
+            <h1>De bus gaat meet met volgende deelnemers</h1>
+        </div>
+        <div id="content">
+            <h:form>
+            <h:inputText id="name" 
+                         value="#{reiziger.naam}"
+                         required="true"
+                         requiredMessage="name is required"
+                         />
+            <h:message for="name" styleClass="error"/>
+            <br/>
+            <h:inputText id="date" 
+                         value="#{reiziger.tempGeboorteDatum}"
+                         required="true"
+                         requiredMessage="date is required"
+                         >
+                <f:validateRegex pattern="\d{1,2}[/]{1}\d{1,2}[/]{1}\d{4}"/>
+            </h:inputText>
+            <h:message for="name" styleClass="error"/>
+            <h:commandButton value="Toevoegen aan de lijst" action="#{bus.add(reiziger)}"/>
+        </h:form>
+        </div>
+    </h:body>
+</html>
+

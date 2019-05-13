@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="nl"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <title>Student Bevestiging</title>
+    </h:head>
+    <h:body>
+        <p>
+        <h:outputText value="De naam van de student is: "/>
+        <h:outputText value="#{student.naam}"/>
+        </p>
+        Het land van de student is: #{student.land} 
+        <p>
+        De favoriete programmeertaal van de student: #{student.favorieteTaal}
+        </p>
+        <h:link value="home" outcome="index"/>
+    </h:body>
+</html>

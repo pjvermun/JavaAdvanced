@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <ol>
+                <ui:repeat value="#{teamController.findAll()}" var="t">
+                    <li>#{t.opdracht}</li>
+                    <ol>
+                        <ui:repeat value="#{t.leden}" var="lid">
+                            <li>#{lid.naam}</li>
+                            <ul>
+                                <ui:repeat value="#{lid.telefoonnrs}" var="tel">
+                                    <li>#{tel.type}: #{tel.nummer}</li>
+                                </ui:repeat>
+                            </ul>
+
+                        </ui:repeat>
+                    </ol>
+                </ui:repeat>
+            </ol>
+            <br/>
+            <h:commandLink value="voeg team toe" action="#{teamController.add1()}"></h:commandLink><br/>
+            <h:commandLink value="voeg teamlid toe" action="#{persoonController.add1()}"></h:commandLink><br/>
+            <h:commandLink value="voeg telefoonnummer toe" action="addTelefoonnummer"></h:commandLink><br/>
+        </h:form>
+    </h:body>
+</html>
+
